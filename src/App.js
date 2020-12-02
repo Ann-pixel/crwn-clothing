@@ -13,6 +13,8 @@ import  {selectCurrentUser} from "./redux/user/user.selector";
 import {createStructuredSelector} from "reselect";
 import CheckoutPage from "./pages/check-out/check-out.component";
 
+
+
 class App extends React.Component {
   unsubscribeFromAuth =null;
 componentDidMount(){
@@ -28,15 +30,15 @@ componentDidMount(){
         setCurrentUser({
             id: snapShot.id,
             ...snapShot.data()
-          })
+          });
         
         // console.log(this.state);
       });
      
       
-    } else {
-      setCurrentUser(userAuth);
-    }
+    } 
+    
+    setCurrentUser(userAuth);
 
   });
 
@@ -65,7 +67,8 @@ componentWillUnmount() {
 }
 
 const mapStateToProps= createStructuredSelector ({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+ 
 });
 
 
