@@ -20,33 +20,24 @@ class App extends React.Component {
 componentDidMount(){
   const {setCurrentUser} =this.props;
 
-
-
-  this.unsubscribeFromAuth= auth.onAuthStateChanged(async userAuth => {
-    if(userAuth) {
-      const userRef = await createUserProfileDocument(userAuth);
+  // this.unsubscribeFromAuth= auth.onAuthStateChanged(async userAuth => {
+  //   if(userAuth) {
+  //     const userRef = await createUserProfileDocument(userAuth);
       
-      userRef.onSnapshot(snapShot => {
-        setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data()
-          });
-        
-        // console.log(this.state);
-      });
-     
-      
-    } 
-    
-    setCurrentUser(userAuth);
-
-  });
-
+  //     userRef.onSnapshot(snapShot => {
+  //       setCurrentUser({
+  //           id: snapShot.id,
+  //           ...snapShot.data()
+  //         });
+  //     });
+  //   }   
+  //   setCurrentUser(userAuth);
+  // });
 }
+
 componentWillUnmount() {
   this.unsubscribeFromAuth();
 }
-
   render(){
     return (
       <div>
@@ -56,26 +47,15 @@ componentWillUnmount() {
       <Route path = '/shop' component= {ShopPage}   />
       <Route exact path = '/signin' render=  {()=> this.props.currentUser ? (<Redirect to= "/" />) : (<SignInAndSignUpPage />)}  />
       <Route exact path = '/checkout' component= {CheckoutPage} />
-
-      </Switch>
-      
+      </Switch>      
       </div>
     );
   }
-
- 
 }
-
 const mapStateToProps= createStructuredSelector ({
   currentUser: selectCurrentUser,
- 
 });
-
-
 const mapDispatchToProps = dispatch =>({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
-
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(App);
