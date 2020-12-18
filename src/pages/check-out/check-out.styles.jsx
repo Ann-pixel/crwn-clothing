@@ -1,4 +1,8 @@
-.checkout-page {
+import styled from "styled-components"; 
+
+
+const CheckOutPage = styled.div`
+
     width: 55%;
     min-height: 90vh;
     display: flex;
@@ -41,7 +45,10 @@
       color:  orangered;
       font-size: 24px;
       
-    }
+    }`;
 
-}
-  
+export default CheckOutPage;
+
+
+
+
