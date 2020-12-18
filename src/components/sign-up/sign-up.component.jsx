@@ -1,5 +1,5 @@
 import  React, {useState} from "react";
-import "./sign-up.styles.scss";
+import SignupStyled from "./sign-up.styled";
 import FormInput from "../form-input/form-input.component";
 
 import CustomButton from "../custom-button/custom-button.component";
@@ -24,7 +24,7 @@ const SignUp =({signUpStart}) => {
         setCredentials({...userCredentials, [name]:value});   
     } 
 return(
-    <div className="sign-up">
+    <SignupStyled>
     <h2 className ="title">I do not have an account</h2>
     <span>Sign up with your email password</span>
 
@@ -66,7 +66,7 @@ return(
 
 
     </form>
-    </div>
+    </SignupStyled>
 )
 }
 

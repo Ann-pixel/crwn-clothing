@@ -1,4 +1,6 @@
-.collection-item {
+import styled from "styled-components";
+
+const CollectionItemStyled = styled.div`
     width: 22vw;
     display: flex;
     flex-direction: column;
@@ -47,5 +49,5 @@
         width: 10%;
       }
     }
-  }
-  
+`;
+export default CollectionItemStyled;

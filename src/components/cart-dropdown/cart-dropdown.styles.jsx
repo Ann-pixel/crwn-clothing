@@ -1,4 +1,6 @@
-.cart-dropdown {
+import styled from "styled-components";
+
+const CartDropdownStyles = styled.div`
     position: absolute;
     width: 240px;
     height: 340px;
@@ -25,5 +27,5 @@
     button {
       margin-top: auto;
     }
-  }
-  
+`;
+export default CartDropdownStyles;

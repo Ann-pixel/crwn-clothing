@@ -1,4 +1,6 @@
-.cart-icon {
+import styled from "styled-components";
+
+const CartIconStyles = styled.div`
     width: 45px;
     height: 45px;
     position: relative;
@@ -19,5 +21,5 @@
       font-weight: bold;
       bottom: 12px;
     }
-  }
-  
+`;
+export default CartIconStyles;
