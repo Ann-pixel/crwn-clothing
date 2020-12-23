@@ -6,6 +6,10 @@ import CollectionItem from "../../components/collection-item/collection-item.com
 import CollectionsPageStyled from "./collections.styles";
 
 const CollectionsPage = ({collection}) => {
+
+
+
+
     const {title, items} = collection;
     return (
         <CollectionsPageStyled>
